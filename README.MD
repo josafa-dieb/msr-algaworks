@@ -39,3 +39,8 @@ Utilizado para informar que houve um erro durante a requisição no lado do clie
 
 ### Mensagens de erro no servidor:
 Utilizado para informar que o erro ocorreu do lado do servidor e que ele não soube tratar
+
+# Aula 1.4: Content Negtiation
+A negociação de conteúdo e uma forma de fazer com que aplicação aceite outros formatos utilizado pelos clientes, contanto que
+seja implementada uma conversão do formato utilizado pelo cliente para o formato padrão.
+
