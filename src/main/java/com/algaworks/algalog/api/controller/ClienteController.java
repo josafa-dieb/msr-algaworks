@@ -1,7 +1,9 @@
 package com.algaworks.algalog.api.controller;
 
-import java.util.Arrays;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,22 +12,15 @@ import com.algaworks.algalog.domain.model.Cliente;
 
 
 @RestController
+
 public class ClienteController {
 
+	@PersistenceContext
+	private EntityManager entityManager;
+	
 	@GetMapping("/clientes")
 	public List<Cliente> listar() {
-		Cliente cliente1 = new Cliente();
-		cliente1.setId(1L);
-		cliente1.setNome("Joao");
-		cliente1.setEmail("joaodasilva@gmail.com");
-		cliente1.setTelefone("88 98566-3133");
-
-		Cliente cliente2 = new Cliente();
-		cliente2.setId(2L);
-		cliente2.setNome("Maria");
-		cliente2.setEmail("Mariaasilva@gmail.com");
-		cliente2.setTelefone("88 98663-2231");
-		
-		return Arrays.asList(cliente1, cliente2);
+		return entityManager.createQuery("from Cliente", Cliente.class).getResultList();
 	}
+	
 }
