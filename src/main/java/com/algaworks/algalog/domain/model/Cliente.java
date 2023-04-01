@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -23,13 +24,17 @@ public class Cliente {
 	private Long id;
 
 	@NotBlank
+	@Size(max = 60)
 	private String nome;
 	
 	@NotBlank
 	@Email
+	@Size(max = 60)
 	private String email;
 	
 	@NotBlank
+	@Size(max = 20)
+	@Size(min = 11)
 	private String telefone;
 	
 }
