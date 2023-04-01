@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "34b2bcc5-0136-4d72-8c08-789318c2609a",
+		"name": "msr-algaworks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes - Listar todos os clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - busca por um ciente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - busca por um ciente Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Antonio Carlos\",\n    \"email\": \"antonio22carlos@alu.ufpr.br\",\n    \"telefone\": \"+55 (21) 98523-4523\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - busca por um ciente Copy 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Antonio Carlos da Silva\",\n    \"email\": \"antonio22carlos@alu.ufpr.br\",\n    \"telefone\": \"+55 (21) 98523-4523\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/clientes/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes - busca por um ciente Copy 3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/clientes/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
